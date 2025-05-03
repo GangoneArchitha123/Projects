@@ -1,49 +1,61 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculator using html</title>
-    <link rel="Stylesheet" href="Style.CSS">
+    <title>Login and Signup</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
     <div class="container">
-        <div class="calculator">
-        <form>
-            <div class="display">
-                <input type="text" name="display">
+        <div class="form-container sign-up-container">
+            <form id="signup-form">
+                <h1>Create Account</h1>
+                <div class="input-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" id="signup-name" required />
+                </div>
+                <div class="input-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="signup-email" required />
+                </div>
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="signup-password" required />
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form id="login-form">
+                <h1>Login</h1>
+                <div class="input-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" id="login-email" required />
+                </div>
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" id="login-password" required />
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Already have an account?</p>
+                    <button class="ghost" id="signIn">Login</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Don't have an account?</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
             </div>
-            <div>
-                <input type="button" value="AC" onclick="display.value=''" class="operator">
-                <input type="button" value="DE" onclick="display.value=display.value.toString().slice(0,-1)" class="operator">
-                <input type="button" value="." onclick="display.value+='.'" class="operator">
-                <input type="button" value="/" onclick="display.value+='/'" class="operator">
-            </div>
-            <div>
-                <input type="button" value="7" onclick="display.value+='7'">
-                <input type="button" value="8" onclick="display.value+='8'">
-                <input type="button" value="9" onclick="display.value+='9'">
-                <input type="button" value="*" onclick="display.value+='*'" class="operator">
-            </div>
-            <div>
-                <input type="button" value="4" onclick="display.value+='4'">
-                <input type="button" value="5" onclick="display.value+='5'">
-                <input type="button" value="6" onclick="display.value+='6'">
-                <input type="button" value="-" onclick="display.value+='-'" class="operator">
-            </div>
-            <div>
-                <input type="button" value="1" onclick="display.value+='1'">
-                <input type="button" value="2" onclick="display.value+='2'">
-                <input type="button" value="3" onclick="display.value+='3'">
-                <input type="button" value="+" onclick="display.value+='+'" class="operator">
-            </div>
-            <div>
-                <input type="button" value="00" onclick="display.value+='00'">
-                <input type="button" value="0" onclick="display.value+='0'">
-                <input type="button" value="=" onclick="display.value=eval(display.value)" class="equal opertor">
-            </div>
-        </form>
+        </div>
     </div>
-    </div>
-    
+    <script src="login.js"></script>
 </body>
 </html>
